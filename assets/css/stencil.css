@@ -1,0 +1,54 @@
+a {
+  cursor: pointer; }
+
+h1 small {
+  font-size: 50%; }
+
+.branding {
+  height: 90px;
+  display: block;
+  margin: 20px 0; }
+  .branding a.logo {
+    float: left;
+    display: inline-block;
+    margin-right: 25px; }
+    .branding a.logo img {
+      max-height: 90px; }
+  .branding .title {
+    display: block;
+    float: left;
+    padding: 15px 0; }
+    .branding .title h1 {
+      margin: 0; }
+
+header.contact {
+  min-height: 44px;
+  background-color: #f1f1f1;
+  line-height: 44px;
+  color: #777; }
+  header.contact a {
+    color: #777; }
+
+/** MENU STYLES **/
+.contact-menu {
+  margin-left: 0;
+  margin-bottom: 0; }
+  .contact-menu.right {
+    float: right; }
+  .contact-menu li {
+    float: left;
+    position: relative;
+    display: block;
+    margin-left: 20px; }
+
+.header-menu {
+  margin-top: 15px; }
+
+/** BOOTSTRAP STYLES **/
+.nav-pills > li {
+  margin-right: 1%; }
+  .nav-pills > li > a {
+    border-radius: 0; }
+.nav-pills > li.current_page_item > a {
+  color: white;
+  background-color: #428bca; }

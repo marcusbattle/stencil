@@ -1,0 +1,107 @@
+a {
+
+	cursor: pointer;
+
+}
+
+h1 {
+
+	small {
+		font-size: 50%;
+	}
+
+}
+
+.branding {
+
+	height: 90px;
+	display: block;
+	margin: 20px 0;
+
+	a.logo {
+
+		img {
+			max-height: 90px;
+		}
+
+		float: left;
+		display: inline-block;
+		margin-right: 25px;
+
+	}
+
+	.title {
+		display: block;
+		float: left;
+		padding: 15px 0;
+
+		h1 {
+			margin: 0;
+		}
+
+	}
+
+}
+
+header {
+
+	&.contact {
+		min-height: 44px;
+		background-color: #f1f1f1;
+		line-height: 44px;
+		color: #777;
+
+		a {
+			color: #777;
+		}
+	}
+
+}
+
+/** MENU STYLES **/
+.contact-menu {
+
+	margin-left: 0;
+	margin-bottom: 0;
+
+	&.right {
+		float: right;
+	}
+
+	li {
+		float: left;
+		position: relative;
+		display: block;
+		margin-left: 20px;
+		
+		a {
+		}
+
+	}
+
+}
+
+.header-menu {
+	margin-top: 15px;
+}
+
+/** BOOTSTRAP STYLES **/
+.nav-pills {
+
+	> li {
+		margin-right: 1%;
+
+		> a {
+			border-radius: 0;
+		}
+
+	}
+
+	> li.current_page_item > a {
+
+		color: white;
+		background-color: #428bca;
+
+	}
+
+}
