@@ -1,6 +1,4 @@
 <?php
-	
-	require_once('plugins/components.php');
 
 	function init_stencil() {
 

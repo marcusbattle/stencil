@@ -14,16 +14,6 @@
          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
-
-      <?php
-         $content_text_color = get_option('content_text_color');
-         $content_link_color = get_option('content_link_color');
-      ?>
-
-      <style>
-         body { color:  <?php echo $content_text_color; ?>; }
-         body a { color:  <?php echo $content_link_color; ?>; }
-      </style>
    </head>
    <body>
       <?php if ( has_nav_menu( 'contact-menu' ) ): ?>
@@ -38,32 +28,38 @@
 
       <div class="container">
          <div class="row">
-            <?php if ( has_nav_menu( 'header-menu' ) ) 
-               wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
-            ?>
+           
             <div class="branding">
-               <a href="<?php echo home_url(); ?>" class="logo"><img src="http://marcbook.local/theplatform/wp-content/uploads/2014/03/the-platform-logo.png" /></a>
-               <div class="title">
+               <a class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
+               <div class="title hide">
                   <h1><?php echo get_bloginfo(); ?></h1>
                   <span><?php echo get_bloginfo( 'description' ) ?></span>
                </div>
             </div>
+            <?php if ( has_nav_menu( 'header-menu' ) ) 
+               wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
+            ?>
          </div>
       </div>
 
-      <?php 
-
-         if ( get_option('homepage_layout') == 'one-pager' ) {
-            get_template_part( 'parts/home', 'one-pager' );
-         }
-
-      ?>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-8">.col-md-8</div>
+         </div>
+      </div>
 
       <div class="container">
          <footer>
             <div class="row">
+               <div class="col-md-4">.col-md-4</div>
+               <div class="col-md-4">.col-md-4</div>
+               <div class="col-md-4">.col-md-4</div>
+            </div>
+            <div class="row">
                <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo(); ?></p>
             </div>
+
          </footer>
 
       </div>
