@@ -44,27 +44,26 @@
 
       <div class="container">
          <div class="row">
-            <div class="col-md-4">.col-md-4</div>
             <div class="col-md-8">
                <?php get_template_part( 'parts/loop' ); ?>
             </div>
+            <div class="col-md-4">.col-md-4</div>
          </div>
       </div>
 
-      <div class="container">
-         <footer>
+      <?php //if ( is_active_sidebar( 'Footer Main' ) ) : ?>
+         <div class="container">
             <div class="row">
-               <div class="col-md-4">.col-md-4</div>
-               <div class="col-md-4">.col-md-4</div>
-               <div class="col-md-4">.col-md-4</div>
+               <?php dynamic_sidebar( 'Footer Main' ); ?>
             </div>
-            <div class="row">
-               <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo(); ?></p>
-            </div>
+         </div>
+      <?php //endif; ?>
 
-         </footer>
-
-      </div>
+      <footer class="container">
+         <div class="row">
+            <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo(); ?>. All Rights Reserved.</p>
+         </div>
+      </footer>
       
       <?php wp_footer(); ?>
    </body>

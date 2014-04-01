@@ -61,9 +61,28 @@
 
 	}
 
+	function stencil_widgets_init() {
+
+		$the_sidebars = wp_get_sidebars_widgets();
+		$stencil_footer = $the_sidebars['stencil_footer'];
+		$stencil_footer_count = floor( 12 / count( $stencil_footer ) );
+
+		register_sidebar( array(
+			'name' => 'Footer Main',
+			'id' => 'stencil_footer',
+			'before_widget' => '<div class="col-md-' . $stencil_footer_count . '">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4>',
+			'after_title' => '</h4>',
+		) );
+
+	}
+
+	
+
 	add_action( 'init', 'init_stencil' );
 	add_action( 'wp_enqueue_scripts', 'stencil_scripts' );
 
 	add_action( 'customize_register', 'stencil_customize_register' );
-
+	add_action( 'widgets_init', 'stencil_widgets_init' );
 ?>
