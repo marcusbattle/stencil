@@ -65,7 +65,7 @@
 
 		$the_sidebars = wp_get_sidebars_widgets();
 
-		if ( isset($the_sidebars['stencil_footer']) ) {
+		if ( isset($the_sidebars['stencil_footer']) && ($the_sidebars['stencil_footer']) ) {
 			
 			$stencil_footer = $the_sidebars['stencil_footer'];
 			$stencil_footer_count = floor( 12 / count( $stencil_footer ) );
@@ -77,8 +77,17 @@
 		}
 
 		register_sidebar( array(
+			'name' => 'Left Sidebar',
+			'id' => 'stencil_left_sidebar',
+			'before_widget' => '<div class="stencil-widget%1 stencil-widget-sidebar">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3>',
+			'after_title' => '</h3>',
+		) );
+
+		register_sidebar( array(
 			'name' => 'Right Sidebar',
-			'id' => 'stencil_widget',
+			'id' => 'stencil_right_sidebar',
 			'before_widget' => '<div class="stencil-widget%1 stencil-widget-sidebar">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
