@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-      <title><?php get_bloginfo(); ?></title>
+      <title><?php echo get_bloginfo(); ?></title>
 
       <?php wp_head(); ?>
 
@@ -16,29 +16,65 @@
       <![endif]-->
    </head>
    <body>
-      <div class="container">
-         <div class="row">
-            <?php if ( has_nav_menu( 'header-menu' ) ) 
-               wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills' ) ); 
-            ?>
-            <div>
-               <a class="logo"><img src="<?php echo get_bloginfo('theme_location'); ?>/assets/newjc/newjc-logo-small.png" /></a>
-               <h1><?php echo get_bloginfo(); ?> <br /><small><?php echo get_bloginfo( 'description' ) ?></small></h1>
+      <?php if ( has_nav_menu( 'contact-menu' ) ): ?>
+      <header class="contact">
+         <div class="container">
+            <div class="row">
+               <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
             </div>
          </div>
+      </header>
+      <?php endif; ?>
+
+      <div class="container">
+         <div class="row">
+           
+            <div class="branding">
+               <a class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
+               <div class="title hide">
+                  <h1><?php echo get_bloginfo(); ?></h1>
+                  <span><?php echo get_bloginfo( 'description' ) ?></span>
+               </div>
+            </div>
+            <?php if ( has_nav_menu( 'header-menu' ) ) 
+               wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
+            ?>
+         </div>
+      </div>
+
+      <div class="container">
          <div class="row">
             <div class="page-header">
-               
+               <h1><?php the_title(); ?></h1>
             </div>
          </div>
       </div>
+
+      <div class="container">
+         <div class="row">
+            <div class="col-md-3">
+               <?php dynamic_sidebar( 'Left Sidebar' ); ?>
+            </div>
+            <div class="col-md-9">
+               <?php get_template_part( 'parts/content' ); ?>
+            </div>
+         </div>
+      </div>
+
+      <?php //if ( is_active_sidebar( 'Footer Main' ) ) : ?>
+         <div class="container">
+            <div class="row">
+               <?php dynamic_sidebar( 'Footer' ); ?>
+            </div>
+         </div>
+      <?php //endif; ?>
+
+      <footer class="container">
+         <div class="row">
+            <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo(); ?>. All Rights Reserved.</p>
+         </div>
+      </footer>
       
-
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.min.js"></script>
-
       <?php wp_footer(); ?>
    </body>
 </html>
