@@ -77,13 +77,22 @@
 		}
 
 		register_sidebar( array(
-			'name' => 'Footer Main',
+			'name' => 'Right Sidebar',
+			'id' => 'stencil_widget',
+			'before_widget' => '<div class="stencil-widget%1 stencil-widget-sidebar">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3>',
+			'after_title' => '</h3>',
+		) );
+
+		register_sidebar( array(
+			'name' => 'Footer',
 			'id' => 'stencil_footer',
-			'before_widget' => '<div class="col-md-' . $stencil_footer_count . '">',
+			'before_widget' => '<div class="col-md-' . $stencil_footer_count . ' stencil-widget stencil-widget-footer">',
 			'after_widget' => '</div>',
 			'before_title' => '<h4>',
 			'after_title' => '</h4>',
-		) );
+		) );	
 
 	}
 

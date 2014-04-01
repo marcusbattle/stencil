@@ -43,18 +43,21 @@
       </div>
 
       <div class="container">
+         <h2>Latest News</h2>
          <div class="row">
             <div class="col-md-8">
                <?php get_template_part( 'parts/loop' ); ?>
             </div>
-            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">
+               <?php dynamic_sidebar( 'Right Sidebar' ); ?>
+            </div>
          </div>
       </div>
 
       <?php //if ( is_active_sidebar( 'Footer Main' ) ) : ?>
          <div class="container">
             <div class="row">
-               <?php dynamic_sidebar( 'Footer Main' ); ?>
+               <?php dynamic_sidebar( 'Footer' ); ?>
             </div>
          </div>
       <?php //endif; ?>
