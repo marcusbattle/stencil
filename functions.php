@@ -64,8 +64,17 @@
 	function stencil_widgets_init() {
 
 		$the_sidebars = wp_get_sidebars_widgets();
-		$stencil_footer = $the_sidebars['stencil_footer'];
-		$stencil_footer_count = floor( 12 / count( $stencil_footer ) );
+
+		if ( isset($the_sidebars['stencil_footer']) ) {
+			
+			$stencil_footer = $the_sidebars['stencil_footer'];
+			$stencil_footer_count = floor( 12 / count( $stencil_footer ) );
+
+		} else {
+
+			$stencil_footer_count = 12;
+
+		}
 
 		register_sidebar( array(
 			'name' => 'Footer Main',
