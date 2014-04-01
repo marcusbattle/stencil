@@ -2,5 +2,5 @@
 	<h3><?php the_title(); ?></h3>
 	<?php the_excerpt(); ?>
 <?php endwhile; else: ?>
-	<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+	<p>There are no updates from <?php echo get_bloginfo(); ?></p>
 <?php endif; ?>
