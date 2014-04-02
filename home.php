@@ -31,7 +31,7 @@
       <div class="container">
          <div class="row">
             <div class="branding col-md-3">
-               <a class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
+               <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
                <div class="title hide">
                   <h1><?php echo get_bloginfo(); ?></h1>
                   <span><?php echo get_bloginfo( 'description' ) ?></span>
