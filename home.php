@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-9">
                <?php if ( has_nav_menu( 'header-menu' ) ) 
-                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu pull-right' ) ); 
+                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills navbar-right header-menu' ) ); 
                ?>
             </div>
          </div>
@@ -48,7 +48,7 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12 text-center">
-               <h1>We exist to help resolve homelessness in Greensboro and Greater North Carolina</h1>
+               <h1>Church with a mission to resolve homelessness in Greensboro and Greater North Carolina</h1>
                <p><a class="btn btn-primary btn-lg" role="button" href="/homelessness">Learn more</a></p>
             </div>
          </div>
