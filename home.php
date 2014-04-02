@@ -44,12 +44,20 @@
          </div>
       </div>
 
-      <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): ?>
-      <div class="container">
-         <div class="row">
-         
-         </div>
-      </div>
+      <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): $upcoming_event = get_next_event(); ?>
+         <?php if ( $upcoming_event ): ?>
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-3">
+                     <h4>Next<br />Upcoming Event</h4>
+                  </div>
+                  <div class="col-md-3">
+                     <h3><a href="<?php echo $upcoming_event->permalink ?>"><?php echo $upcoming_event->post_title ?></a></h3>
+                     <span><?php echo $upcoming_event->date ?> <?php echo $upcoming_event->time ?> </span>
+                  </div>
+               </div>
+            </div>
+         <?php endif; ?>
       <?php endif; ?>
 
       <div class="container">
