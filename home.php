@@ -49,11 +49,24 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-3">
-                     <h4>Next<br />Upcoming Event</h4>
+                     <h4>Next Upcoming Event</h4>
+                     <p><a href="">View All Events</a></p>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                      <h3><a href="<?php echo $upcoming_event->permalink ?>"><?php echo $upcoming_event->post_title ?></a></h3>
-                     <span><?php echo $upcoming_event->date ?> <?php echo $upcoming_event->time ?> </span>
+                     <p><span><?php echo $upcoming_event->date ?> <?php echo $upcoming_event->time ?></span></p>
+                  </div>
+                  <div class="col-md-2">
+                     <h5>RSVP Status</h5>
+                     <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">I Am Going <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                           <li><a href="#">Going</a></li>
+                           <li><a href="#">Not Going</a></li>
+                           <li><a href="#">Not sure</a></li>
+                        </ul>
+                     </div>
+
                   </div>
                </div>
             </div>
