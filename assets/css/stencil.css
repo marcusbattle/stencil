@@ -45,8 +45,6 @@ header.contact {
 /** BOOTSTRAP STYLES **/
 .nav-pills > li {
   margin-right: 1%; }
-  .nav-pills > li > a {
-    border-radius: 0; }
 .nav-pills > li.current_page_item > a {
   color: white;
   background-color: #428bca; }
