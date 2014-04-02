@@ -17,11 +17,9 @@
    </head>
    <body>
       <?php if ( has_nav_menu( 'contact-menu' ) ): ?>
-      <header class="contact">
-         <div class="container">
-            <div class="row">
-               <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
-            </div>
+      <header class="contact container">
+         <div class="row">
+            <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
          </div>
       </header>
       <?php endif; ?>

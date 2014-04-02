@@ -1,3 +1,5 @@
+<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -41,6 +43,14 @@
             ?>
          </div>
       </div>
+
+      <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): ?>
+      <div class="container">
+         <div class="row">
+         
+         </div>
+      </div>
+      <?php endif; ?>
 
       <div class="container">
          <h2>Latest News</h2>
