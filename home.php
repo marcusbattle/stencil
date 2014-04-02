@@ -45,6 +45,15 @@
          </div>
       </div>
 
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 text-center">
+               <h1>We exist to help resolve homelessness in Greensboro and Greater North Carolina</h1>
+               <p><a class="btn btn-primary btn-lg" role="button" href="/homelessness">Learn more</a></p>
+            </div>
+         </div>
+      </div>
+
       <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): $upcoming_event = get_next_event(); ?>
          <?php if ( $upcoming_event ): ?>
             <div class="container">
@@ -75,9 +84,9 @@
       <?php endif; ?>
 
       <div class="container">
-         <h2>Latest News</h2>
          <div class="row">
             <div class="col-md-9">
+               <h2>Latest News</h2>
                <?php get_template_part( 'parts/loop' ); ?>
             </div>
             <div class="col-md-3">
