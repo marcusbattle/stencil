@@ -42,7 +42,8 @@ header.contact {
     margin-left: 20px; }
 
 .header-menu {
-  margin-top: 15px; }
+  margin-top: 15px;
+  width: inherit; }
 
 /** BOOTSTRAP STYLES **/
 .nav-pills > li {

@@ -30,17 +30,18 @@
 
       <div class="container">
          <div class="row">
-           
-            <div class="branding">
+            <div class="branding col-md-3">
                <a class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
                <div class="title hide">
                   <h1><?php echo get_bloginfo(); ?></h1>
                   <span><?php echo get_bloginfo( 'description' ) ?></span>
                </div>
             </div>
-            <?php if ( has_nav_menu( 'header-menu' ) ) 
-               wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
-            ?>
+            <div class="col-md-9">
+               <?php if ( has_nav_menu( 'header-menu' ) ) 
+                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu pull-right' ) ); 
+               ?>
+            </div>
          </div>
       </div>
 
