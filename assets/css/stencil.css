@@ -9,7 +9,8 @@ h1 small {
   display: inline-block;
   margin-right: 25px; }
   .branding a.logo img {
-    max-height: 75px; }
+    max-height: 75px;
+    margin: 10px 0; }
 .branding .title {
   display: block;
   float: left;
