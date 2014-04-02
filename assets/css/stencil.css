@@ -39,8 +39,7 @@ header.contact {
     margin-left: 20px; }
 
 .header-menu {
-  margin-top: 15px;
-  width: inherit; }
+  margin-top: 15px; }
 
 /** BOOTSTRAP STYLES **/
 .nav-pills > li.current_page_item > a {
