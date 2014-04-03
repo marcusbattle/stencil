@@ -56,7 +56,7 @@
 
       <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): $upcoming_event = get_next_event(); ?>
          <?php if ( $upcoming_event ): ?>
-            <div class="container">
+            <div id="upcoming-event" class="container">
                <div class="row">
                   <div class="col-md-3">
                      <h4>Next Upcoming Event</h4>
@@ -70,7 +70,7 @@
                   </div>
                   <div class="col-md-3">
                      <div class="event-countdown event-countdown-small" data-date="<?php echo $upcoming_event->date ?>" style="display: none;">
-                        <div class="timer-col"><span id="days" class="label label-default"></span><span class="timer-type">days</span></div>
+                        <div class="timer-col"><span id="days" class="label label-primary"></span><span class="timer-type">days</span></div>
                         <div class="timer-col"><span id="hours" class="label label-default"></span><span class="timer-type">hrs</span></div>
                         <div class="timer-col"><span id="minutes" class="label label-default"></span><span class="timer-type">mins</span></div>
                         <div class="timer-col"><span id="seconds" class="label label-default"></span><span class="timer-type">secs</span></div>
@@ -79,7 +79,7 @@
                   <div class="col-md-2">
                      <h5>RSVP Status</h5>
                      <div class="btn-group">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">I Am Going <span class="caret"></span></button>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">I Am Going <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu">
                            <li><a href="#">Going</a></li>
                            <li><a href="#">Not Going</a></li>
