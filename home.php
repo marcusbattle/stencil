@@ -30,17 +30,18 @@
 
       <div class="container">
          <div class="row">
-           
-            <div class="branding">
+            <div class="branding col-md-3">
                <a class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
                <div class="title hide">
                   <h1><?php echo get_bloginfo(); ?></h1>
                   <span><?php echo get_bloginfo( 'description' ) ?></span>
                </div>
             </div>
-            <?php if ( has_nav_menu( 'header-menu' ) ) 
-               wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
-            ?>
+            <div class="col-md-9">
+               <?php if ( has_nav_menu( 'header-menu' ) ) 
+                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
+               ?>
+            </div>
          </div>
       </div>
 
@@ -53,8 +54,18 @@
                      <p><a href="">View All Events</a></p>
                   </div>
                   <div class="col-md-4">
-                     <h3><a href="<?php echo $upcoming_event->permalink ?>"><?php echo $upcoming_event->post_title ?></a></h3>
-                     <p><span><?php echo $upcoming_event->date ?> <?php echo $upcoming_event->time ?></span></p>
+                     <h2>
+                        <a href="<?php echo $upcoming_event->permalink ?>"><?php echo $upcoming_event->post_title ?></a>
+                        <br /><small><?php echo $upcoming_event->date ?> <?php echo $upcoming_event->time ?></small>
+                     </h2>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="event-countdown event-countdown-small" data-date="<?php echo $upcoming_event->date ?>" style="display: none;">
+                        <div class="timer-col"><span id="days" class="label label-default"></span><span class="timer-type">days</span></div>
+                        <div class="timer-col"><span id="hours" class="label label-default"></span><span class="timer-type">hrs</span></div>
+                        <div class="timer-col"><span id="minutes" class="label label-default"></span><span class="timer-type">mins</span></div>
+                        <div class="timer-col"><span id="seconds" class="label label-default"></span><span class="timer-type">secs</span></div>
+                     </div>
                   </div>
                   <div class="col-md-2">
                      <h5>RSVP Status</h5>
