@@ -4,22 +4,19 @@ a {
 h1 small {
   font-size: 50%; }
 
-.branding {
-  height: 90px;
+.branding a.logo {
+  float: left;
+  display: inline-block;
+  margin-right: 25px; }
+  .branding a.logo img {
+    max-height: 75px;
+    margin: 10px 0; }
+.branding .title {
   display: block;
-  margin: 20px 0; }
-  .branding a.logo {
-    float: left;
-    display: inline-block;
-    margin-right: 25px; }
-    .branding a.logo img {
-      max-height: 75px; }
-  .branding .title {
-    display: block;
-    float: left;
-    padding: 15px 0; }
-    .branding .title h1 {
-      margin: 0; }
+  float: left;
+  padding: 15px 0; }
+  .branding .title h1 {
+    margin: 0; }
 
 header.contact {
   min-height: 44px;
@@ -45,10 +42,6 @@ header.contact {
   margin-top: 15px; }
 
 /** BOOTSTRAP STYLES **/
-.nav-pills > li {
-  margin-right: 1%; }
-  .nav-pills > li > a {
-    border-radius: 0; }
 .nav-pills > li.current_page_item > a {
   color: white;
   background-color: #428bca; }

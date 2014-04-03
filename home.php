@@ -31,7 +31,7 @@
       <div class="container">
          <div class="row">
             <div class="branding col-md-3">
-               <a class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
+               <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
                <div class="title hide">
                   <h1><?php echo get_bloginfo(); ?></h1>
                   <span><?php echo get_bloginfo( 'description' ) ?></span>
@@ -41,6 +41,15 @@
                <?php if ( has_nav_menu( 'header-menu' ) ) 
                   wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
                ?>
+            </div>
+         </div>
+      </div>
+
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 text-center">
+               <h1>Church with a mission to resolve homelessness in Greensboro and Greater North Carolina</h1>
+               <p><a class="btn btn-primary btn-lg" role="button" href="/homelessness">Learn more</a></p>
             </div>
          </div>
       </div>
@@ -85,9 +94,9 @@
       <?php endif; ?>
 
       <div class="container">
-         <h2>Latest News</h2>
          <div class="row">
             <div class="col-md-9">
+               <h2>Latest News</h2>
                <?php get_template_part( 'parts/loop' ); ?>
             </div>
             <div class="col-md-3">
