@@ -1,9 +1,9 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	
+
 	<?php if ( $post->post_type == 'lemonbox_event' ): ?>
 		
 	<?php else: ?>
-		<div class="row">
+		<div class="row <?php echo $post->post_type; ?>">
 			<div class="col-xs-4 col-md-3">
 			    <a href="<?php the_permalink(); ?>" class="thumbnail">
 			    	<img data-src="http://placehold.it/200x150" alt="...">

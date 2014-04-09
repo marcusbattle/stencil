@@ -41,6 +41,9 @@ header.contact {
 .header-menu {
   margin-top: 15px; }
 
+.row.post h3 {
+  margin-top: 4px; }
+
 /** BOOTSTRAP STYLES **/
 .nav-pills > li.current_page_item > a {
   color: white;
