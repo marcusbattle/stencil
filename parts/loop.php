@@ -4,12 +4,12 @@
 		
 	<?php else: ?>
 		<div class="row <?php echo $post->post_type; ?>">
-			<div class="col-xs-4 col-md-3">
+			<div class="col-md-4">
 			    <a href="<?php the_permalink(); ?>" class="thumbnail">
-			    	<img data-src="http://placehold.it/200x150" alt="...">
+			    	<img data-src="http://placehold.it/250x200" alt="...">
 			    </a>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br /><small><?php echo date('F d, Y', strtotime($post->post_date)); ?></small></h3>
 				<?php the_excerpt(); ?>
 				<p><a href="#">Read More</a></p>

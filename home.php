@@ -49,7 +49,7 @@
          <div class="row">
             <div class="col-md-12 text-center">
                <h1>Church with a mission to resolve homelessness in Greensboro and Greater North Carolina</h1>
-               <p><a class="btn btn-primary btn-lg" role="button" href="/homelessness">Learn more</a></p>
+               <p><a class="btn btn-primary btn-md" role="button" href="<?php echo home_url(); ?>/homelessness">Learn more</a></p>
             </div>
          </div>
       </div>
@@ -80,7 +80,7 @@
                   </div>
                    <div class="col-md-2">
                      <?php if( $upcoming_event->ticket_id ): ?>
-                        <a type="button" class="btn btn-lg btn-primary" href="<?php echo $upcoming_event->permalink ?>">Buy Ticket $25</a>
+                        <a type="button" class="btn btn-lg btn-primary" href="<?php echo $upcoming_event->permalink ?>">Buy Ticket $<?php echo round($upcoming_event->ticket->meta['product_price'][0]) ?></a>
                      <?php else: ?>
                         <h5>RSVP Status</h5>
                         <div class="btn-group">
