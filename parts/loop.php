@@ -10,8 +10,9 @@
 			    </a>
 			</div>
 			<div class="col-md-9">
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br /><small><?php echo date('F d, Y', strtotime($post->post_date)); ?></small></h3>
 				<?php the_excerpt(); ?>
+				<p><a href="#">Read More</a></p>
 			</div>
 		</div>
 	<?php endif; ?>

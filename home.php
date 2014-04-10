@@ -54,18 +54,20 @@
          </div>
       </div>
 
-      <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): $upcoming_event = get_next_event(); ?>
+      <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): 
+         $upcoming_event = get_next_event(); 
+         $rsvp_statuses = array( 'yes' => "I'm Going", 'no' => "I'm not going", 'maybe' => "I'm not sure" ); ?>
          <?php if ( $upcoming_event ): ?>
             <div id="upcoming-event" class="container">
                <div class="row">
                   <div class="col-md-3">
                      <h4>Next Upcoming Event</h4>
-                     <p><a href="">View All Events</a></p>
+                     <p><a href="<?php echo home_url(); ?>/events">View All Events</a></p>
                   </div>
                   <div class="col-md-4">
                      <h2>
                         <a href="<?php echo $upcoming_event->permalink ?>"><?php echo $upcoming_event->post_title ?></a>
-                        <br /><small><?php echo $upcoming_event->date ?> <?php echo $upcoming_event->time ?></small>
+                        <br /><small><?php echo $upcoming_event->date ?></small>
                      </h2>
                   </div>
                   <div class="col-md-3">
@@ -76,17 +78,22 @@
                         <div class="timer-col"><span id="seconds" class="label label-default"></span><span class="timer-type">secs</span></div>
                      </div>
                   </div>
-                  <div class="col-md-2">
-                     <h5>RSVP Status</h5>
-                     <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">I Am Going <span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu">
-                           <li><a href="#">Going</a></li>
-                           <li><a href="#">Not Going</a></li>
-                           <li><a href="#">Not sure</a></li>
-                        </ul>
-                     </div>
-
+                   <div class="col-md-2">
+                     <?php if( $upcoming_event->ticket_id ): ?>
+                        <a type="button" class="btn btn-lg btn-primary" href="<?php echo $upcoming_event->permalink ?>">Buy Ticket $25</a>
+                     <?php else: ?>
+                        <h5>RSVP Status</h5>
+                        <div class="btn-group">
+                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              <?php echo isset($_COOKIE['rsvp_status']) ? $rsvp_statuses( $_COOKIE['rsvp_status'] ) : "I'm going" ?>
+                           <span class="caret"></span></button>
+                           <ul class="dropdown-menu" role="menu">
+                              <li><a href="<?php echo $upcoming_event->permalink ?>?rsvp_status=yes">Going</a></li>
+                              <li><a href="<?php echo $upcoming_event->permalink ?>?rsvp_status=no">Not Going</a></li>
+                              <li><a href="<?php echo $upcoming_event->permalink ?>?rsvp_status=maybe">Not sure</a></li>
+                           </ul>
+                        </div>
+                     <?php endif; ?>
                   </div>
                </div>
             </div>
