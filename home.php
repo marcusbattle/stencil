@@ -102,11 +102,11 @@
 
       <div class="container">
          <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
                <h2>Latest News</h2>
                <?php get_template_part( 'parts/loop' ); ?>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-md-offset-1">
                <?php dynamic_sidebar( 'Right Sidebar' ); ?>
             </div>
          </div>
