@@ -47,7 +47,8 @@ header.contact {
 article {
   padding-bottom: 10px;
   border-bottom: 1px solid;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  border-color: #eee; }
 
 /** BOOTSTRAP STYLES **/
 .nav-pills > li.current_page_item > a {
