@@ -3,18 +3,20 @@
 	<?php if ( $post->post_type == 'lemonbox_event' ): ?>
 		
 	<?php else: ?>
-		<div class="row <?php echo $post->post_type; ?>">
+		<article class="row <?php echo $post->post_type; ?>">
 			<div class="col-md-4">
 			    <a href="<?php the_permalink(); ?>" class="thumbnail">
-			    	<img data-src="http://placehold.it/250x200" alt="...">
+			    	<img data-src="http://placehold.it/250x150" alt="...">
 			    </a>
 			</div>
 			<div class="col-md-8">
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br /><small><?php echo date('F d, Y', strtotime($post->post_date)); ?></small></h3>
+				<h3>
+					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
+					<small><span class="glyphicon glyphicon-calendar"></span> <?php echo date('F d, Y', strtotime($post->post_date)); ?></small>
+				</h3>
 				<?php the_excerpt(); ?>
-				<p><a href="#">Read More</a></p>
 			</div>
-		</div>
+		</article>
 	<?php endif; ?>
 <?php endwhile; else: ?>
 	<p>There are no updates from <?php echo get_bloginfo(); ?></p>

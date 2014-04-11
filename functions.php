@@ -107,11 +107,21 @@
 
 	}
 
-	
+	function stencil_excerpt_length( $length ) {
+		return 33;
+	}
+
+	function stencil_excerpt_more( ) {
+		global $post;
+		return '<p><a class="read_more" href="'. get_permalink($post->ID) . '">' . 'Read More</a></p>';
+	}
 
 	add_action( 'init', 'init_stencil' );
 	add_action( 'wp_enqueue_scripts', 'stencil_scripts' );
 
 	add_action( 'customize_register', 'stencil_customize_register' );
 	add_action( 'widgets_init', 'stencil_widgets_init' );
+
+	add_filter( 'excerpt_length', 'stencil_excerpt_length', 999 );
+	add_filter( 'excerpt_more', 'stencil_excerpt_more' );
 ?>

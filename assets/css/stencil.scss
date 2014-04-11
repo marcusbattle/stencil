@@ -85,9 +85,15 @@ header {
 .row {
 
 	&.post h3 {
-		margin-top: 10px;
+		margin-top: 5px;
 	}
-	
+
+}
+
+article {
+	padding-bottom: 10px;
+	border-bottom: 1px solid;
+	margin-bottom: 20px;
 }
 
 /** BOOTSTRAP STYLES **/
