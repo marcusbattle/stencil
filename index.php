@@ -1,3 +1,6 @@
+<?php
+   $page_layout = get_post_meta( $post->ID, '_page_layout', true );
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -49,15 +52,13 @@
          </div>
       </div>
 
-      <div class="container">
-         <div class="row">
-            <div class="col-md-8">
-               <?php get_template_part( 'parts/content' ); ?>
-            </div>
-            <div class="col-md-3 col-md-offset-1">
-               <?php dynamic_sidebar( 'Left Sidebar' ); ?>
-            </div>
-         </div>
+      <div class="container <?php echo $page_layout ?>">
+
+         <?php 
+            if ( $page_layout ) get_template_part( 'parts/' . $page_layout ); 
+            else get_template_part( 'parts/right-sidebar' );
+         ?>
+
       </div>
 
       <?php //if ( is_active_sidebar( 'Footer Main' ) ) : ?>

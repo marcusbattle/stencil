@@ -116,6 +116,38 @@
 		return '<p><a class="read_more" href="'. get_permalink($post->ID) . '">' . 'Read More</a></p>';
 	}
 
+	function stencil_meta_boxes() {
+		$post_types = get_post_types( array( 'public' => true ), 'names' );
+
+		// Set meta box for all public post types 
+		foreach( $post_types as $post_type ) {
+			add_meta_box( 'page_layout', 'Page Layout', 'stencil_meta_box_page_layout', $post_type, 'side', 'high' );
+		}
+	}
+
+	function stencil_meta_box_page_layout( $post ) {
+
+		$page_layout = get_post_meta( $post->ID, '_page_layout', true );
+
+		echo '<p><strong>Layout</strong></p>';
+		echo '<select name="_page_layout">';
+		echo '<option value="">--</option>';
+		echo '<option value="full-width">Full Width</option>';
+		echo '<option value="left-sidebar">Left Sidebar</option>';
+		echo '<option value="right-sidebar">Right Sidebar</option>';
+		echo '</select>';
+
+		echo "<script>jQuery('select[name=\"_page_layout\"]').val('" . $page_layout . "');</script>";
+	}
+
+	function stencil_save_post( $post_id ) {
+
+		if ( isset($_REQUEST['_page_layout']) ) {
+			update_post_meta( $post_id, '_page_layout', $_REQUEST['_page_layout'] );
+		}
+
+	}
+
 	add_action( 'init', 'init_stencil' );
 	add_action( 'wp_enqueue_scripts', 'stencil_scripts' );
 
@@ -124,4 +156,8 @@
 
 	add_filter( 'excerpt_length', 'stencil_excerpt_length', 999 );
 	add_filter( 'excerpt_more', 'stencil_excerpt_more' );
+
+	add_action( 'add_meta_boxes', 'stencil_meta_boxes' );
+	add_action( 'save_post','stencil_save_post' );
+
 ?>
