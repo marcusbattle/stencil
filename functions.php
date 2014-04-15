@@ -172,8 +172,10 @@
 		public function widget( $args, $instance ) {
 			
 			global $post;
+			
 			$post_id = $post->ID;
 			$post_title = $post->post_title;
+			$child_pages = get_pages( );
 
 			$title = apply_filters( 'widget_title', $instance['title'] );
 
@@ -209,6 +211,7 @@
 		public function update( $new_instance, $old_instance ) {
 			// processes widget options to be saved
 		}
+
 	}
 
 	add_action( 'init', 'init_stencil' );
