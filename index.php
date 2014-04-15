@@ -58,7 +58,6 @@
             if ( $page_layout ) get_template_part( 'parts/' . $page_layout ); 
             else get_template_part( 'parts/right-sidebar' );
          ?>
-
       </div>
 
       <?php //if ( is_active_sidebar( 'Footer Main' ) ) : ?>

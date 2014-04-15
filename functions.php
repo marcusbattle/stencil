@@ -105,6 +105,8 @@
 			'after_title' => '</h4>',
 		) );	
 
+		register_widget( 'Sub_Menu_Widget' );
+
 	}
 
 	function stencil_excerpt_length( $length ) {
@@ -146,6 +148,67 @@
 			update_post_meta( $post_id, '_page_layout', $_REQUEST['_page_layout'] );
 		}
 
+	}
+
+	class Sub_Menu_Widget extends WP_Widget {
+
+		/**
+		 * Sets up the widgets name etc
+		 */
+		public function __construct() {
+			parent::__construct(
+				'sub_menu_widget', // Base ID
+				__('Sub Menu', 'sub_menu_widget'), // Name
+				array( 'description' => __( 'Sub Menu for Pages', 'sub_menu_widget' ), ) // Args
+			);
+		}
+
+		/**
+		 * Outputs the content of the widget
+		 *
+		 * @param array $args
+		 * @param array $instance
+		 */
+		public function widget( $args, $instance ) {
+			
+			global $post;
+			$post_id = $post->ID;
+			$post_title = $post->post_title;
+
+			$title = apply_filters( 'widget_title', $instance['title'] );
+
+			echo $args['before_widget'];
+			if ( ! empty( $title ) )
+				echo $args['before_title'] . $title . $args['after_title'];
+			
+			echo "<h3>More $post_title</h3>";
+			echo "<ul>";
+			wp_list_pages("title_li=&child_of=$post_id");
+			echo "</ul>";
+
+			echo $args['after_widget'];
+
+		}
+
+		/**
+		 * Ouputs the options form on admin
+		 *
+		 * @param array $instance The widget options
+		 */
+		public function form( $instance ) {
+			// outputs the options form on admin
+			echo "<p>This widget will display a sub page menu. There are no additional options at this time.</p>";
+		}
+
+		/**
+		 * Processing widget options on save
+		 *
+		 * @param array $new_instance The new options
+		 * @param array $old_instance The previous options
+		 */
+		public function update( $new_instance, $old_instance ) {
+			// processes widget options to be saved
+		}
 	}
 
 	add_action( 'init', 'init_stencil' );

@@ -55,7 +55,7 @@
       </div>
 
       <?php if ( is_plugin_active( 'lemonbox-events/lemonbox-events.php' ) ): 
-         $upcoming_event = get_next_event(); 
+         $upcoming_event = get_next_event();
          $rsvp_statuses = array( 'yes' => "I'm Going", 'no' => "I'm not going", 'maybe' => "I'm not sure" ); ?>
          <?php if ( $upcoming_event ): ?>
             <div id="upcoming-event" class="container">
@@ -80,7 +80,7 @@
                   </div>
                    <div class="col-sm-12 col-md-2">
                      <?php if( $upcoming_event->ticket_id ): ?>
-                        <a type="button" class="btn btn-lg btn-primary" href="<?php echo $upcoming_event->permalink ?>">Buy Ticket $<?php echo round($upcoming_event->ticket->meta['product_price'][0]) ?></a>
+                        <a type="button" class="btn btn-lg btn-primary" href="<?php echo $upcoming_event->permalink ?>">Buy Ticket $<?php echo isset($upcoming_event->ticket->meta['product_price'][0]) ? round($upcoming_event->ticket->meta['product_price'][0]) : '' ?></a>
                      <?php else: ?>
                         <h5>RSVP Status</h5>
                         <div class="btn-group">
