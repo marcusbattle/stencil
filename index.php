@@ -1,5 +1,7 @@
 <?php
-   $page_layout = get_post_meta( $post->ID, '_page_layout', true );
+   $post_id = $post->ID; echo $post_id . ' ';
+   $parent_id = ($post->post_parent) ? $post->post_parent : $post_id;
+   $page_layout = get_post_meta( $post_id, '_page_layout', true );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +22,11 @@
    </head>
    <body>
       <?php if ( has_nav_menu( 'contact-menu' ) ): ?>
-      <header class="contact container">
-         <div class="row">
-            <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
+      <header class="contact">
+         <div class="container">
+            <div class="row">
+               <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
+            </div>
          </div>
       </header>
       <?php endif; ?>
@@ -38,8 +42,11 @@
             </div>
             <div class="col-md-9">
                <?php if ( has_nav_menu( 'header-menu' ) ) 
-                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu pull-right' ) ); 
+                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
                ?>
+               <ul class="nav nav-pills">
+                  <?php wp_list_pages("title_li=&child_of=$parent_id"); ?>
+               </ul>
             </div>
          </div>
       </div>

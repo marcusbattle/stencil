@@ -1,5 +1,3 @@
-<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -39,7 +37,7 @@
             </div>
             <div class="col-md-9">
                <?php if ( has_nav_menu( 'header-menu' ) ) 
-                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu navbar-right' ) ); 
+                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
                ?>
             </div>
          </div>
