@@ -1,5 +1,5 @@
 <?php
-   $post_id = $post->ID; echo $post_id . ' ';
+   $post_id = $post->ID;
    $parent_id = ($post->post_parent) ? $post->post_parent : $post_id;
    $page_layout = get_post_meta( $post_id, '_page_layout', true );
 ?>
@@ -33,7 +33,7 @@
 
       <div class="container">
          <div class="row">
-            <div class="branding col-md-3">
+            <div class="branding col-md-3 col-sm-12 col-xs-12">
                <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
                <div class="title hide">
                   <h1><?php echo get_bloginfo(); ?></h1>
@@ -53,14 +53,17 @@
 
       <div class="container">
          <div class="row">
-            <div class="page-header">
-               <h1><?php the_title(); ?></h1>
+            <div class="page-header col-md-12">
+               <?php if ( is_post_type_archive() ): ?>
+                  <h1><?php post_type_archive_title(); ?></h1>
+               <?php else: ?>
+                  <h1><?php the_title(); ?></h1>
+               <?php endif; ?>
             </div>
          </div>
       </div>
 
       <div class="container <?php echo $page_layout ?>">
-
          <?php 
             if ( $page_layout ) get_template_part( 'parts/' . $page_layout ); 
             else get_template_part( 'parts/right-sidebar' );

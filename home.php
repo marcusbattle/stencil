@@ -28,7 +28,7 @@
 
       <div class="container">
          <div class="row">
-            <div class="branding col-md-3">
+            <div class="branding col-md-3 col-sm-12 col-xs-12">
                <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
                <div class="title hide">
                   <h1><?php echo get_bloginfo(); ?></h1>
@@ -102,7 +102,7 @@
          <div class="row">
             <div class="col-md-8">
                <h2>Latest News</h2>
-               <?php get_template_part( 'parts/loop' ); ?>
+               <?php get_template_part( 'parts/post/loop' ); ?>
             </div>
             <div class="col-md-3 col-md-offset-1">
                <?php dynamic_sidebar( 'Right Sidebar' ); ?>
