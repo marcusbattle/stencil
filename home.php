@@ -66,7 +66,7 @@
                      <p><a href="<?php echo home_url(); ?>/events">View all events</a></p>
                   </div>
                   <div class="col-sm-4 col-md-3">
-                      <h4>Coming up in</h4>
+                      <h4>Event Begins In</h4>
                      <div class="event-countdown event-countdown-small" data-date="<?php echo $upcoming_event->date ?>" style="display: none;">
                         <div class="timer-col"><span id="days" class="label label-primary"></span><span class="timer-type">days</span></div>
                         <div class="timer-col"><span id="hours" class="label label-default"></span><span class="timer-type">hrs</span></div>
