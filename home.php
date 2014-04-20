@@ -58,17 +58,15 @@
          <?php if ( $upcoming_event ): ?>
             <div id="upcoming-event" class="container">
                <div class="row">
-                  <div class="col-sm-12 col-md-3">
-                     <h4>Next Upcoming Event</h4>
-                     <p><a href="<?php echo home_url(); ?>/events">View All Events</a></p>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
+                  <div class="col-sm-5 col-md-5 col-md-offset-1">
                      <h2>
                         <a href="<?php echo $upcoming_event->permalink ?>"><?php echo $upcoming_event->post_title ?></a>
                         <br /><small><?php echo $upcoming_event->date ?></small>
                      </h2>
+                     <p><a href="<?php echo home_url(); ?>/events">View all events</a></p>
                   </div>
-                  <div class="col-sm-6 col-md-3">
+                  <div class="col-sm-4 col-md-3">
+                      <h4>Coming up in</h4>
                      <div class="event-countdown event-countdown-small" data-date="<?php echo $upcoming_event->date ?>" style="display: none;">
                         <div class="timer-col"><span id="days" class="label label-primary"></span><span class="timer-type">days</span></div>
                         <div class="timer-col"><span id="hours" class="label label-default"></span><span class="timer-type">hrs</span></div>
@@ -76,11 +74,11 @@
                         <div class="timer-col"><span id="seconds" class="label label-default"></span><span class="timer-type">secs</span></div>
                      </div>
                   </div>
-                   <div class="col-sm-12 col-md-2">
+                   <div class="col-xs-12 col-sm-3 col-md-2">
                      <?php if( $upcoming_event->ticket_id ): ?>
                         <a type="button" class="btn btn-lg btn-primary" href="<?php echo $upcoming_event->permalink ?>">Buy Ticket $<?php echo isset($upcoming_event->ticket->meta['product_price'][0]) ? round($upcoming_event->ticket->meta['product_price'][0]) : '' ?></a>
                      <?php else: ?>
-                        <h5>RSVP Status</h5>
+                        <h4>RSVP Status</h4>
                         <div class="btn-group">
                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               <?php echo isset($_COOKIE['rsvp_status']) ? $rsvp_statuses( $_COOKIE['rsvp_status'] ) : "I'm going" ?>
