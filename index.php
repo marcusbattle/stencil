@@ -1,7 +1,18 @@
 <?php
-   $post_id = $post->ID;
-   $parent_id = ($post->post_parent) ? $post->post_parent : $post_id;
-   $page_layout = get_post_meta( $post_id, '_page_layout', true );
+   
+   if ( $post ) {
+      
+      $post_id = $post->ID;
+      $parent_id = ($post->post_parent) ? $post->post_parent : $post_id;
+      $page_layout = get_post_meta( $post_id, '_page_layout', true );
+
+   } else {
+
+      $parent_id = false;
+      $page_layout = 'right-sidebar';
+
+   }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +55,11 @@
                <?php if ( has_nav_menu( 'header-menu' ) ) 
                   wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
                ?>
-               <ul class="nav nav-pills">
-                  <?php wp_list_pages("title_li=&child_of=$parent_id"); ?>
-               </ul>
+               <?php if ( $parent_id ): ?>
+                  <ul class="nav nav-pills">
+                     <?php wp_list_pages("title_li=&child_of=$parent_id"); ?>
+                  </ul>
+               <?php endif; ?>
             </div>
          </div>
       </div>
