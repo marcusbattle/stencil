@@ -32,6 +32,8 @@
       <![endif]-->
    </head>
    <body>
+      <?php echo get_option('google_tag_manager'); ?>
+      
       <?php if ( has_nav_menu( 'contact-menu' ) ): ?>
       <header class="contact">
          <div class="container">

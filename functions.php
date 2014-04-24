@@ -11,9 +11,15 @@
 		register_nav_menu( 'contact-menu', __('Contact Menu') );
 
 		add_option( 'homepage_layout', 'one-pager', '', 'yes' );
+		add_option( 'google_tag_manager', '', '', 'yes' );
+
+
+		if ( isset($_REQUEST['google_tag_manager']) ) {
+			update_option( 'google_tag_manager', $_POST['google_tag_manager'] );
+		}
 
 	}
-	
+
 	function stencil_scripts() {
 
 		wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
@@ -24,6 +30,19 @@
 
 		wp_enqueue_script( 'stencil-js', get_template_directory_uri() . '/assets/js/stencil.js', array('jquery-1-11'), false, true );
 
+	}
+
+	function stencil_admin_menu() {
+		add_menu_page( 'Stencil', 'Stencil', 'administrator', 'stencil-theme', 'stencil_page_settings', '', 58 );
+		add_submenu_page( 'stencil-theme', 'Analytics', 'Analytics', 'administrator', 'stencil-theme-analytics', 'stencil_page_analytics' );
+	}
+
+	function stencil_page_settings() {
+		include( plugin_dir_path(__FILE__) . 'admin-pages/settings.php' );
+	}
+
+	function stencil_page_analytics() {
+		include( plugin_dir_path(__FILE__) . 'admin-pages/analytics.php' );
 	}
 
 	function stencil_customize_register( $wp_customize ) {
@@ -215,6 +234,7 @@
 	}
 
 	add_action( 'init', 'init_stencil' );
+	add_action( 'admin_menu', 'stencil_admin_menu' );
 	add_action( 'wp_enqueue_scripts', 'stencil_scripts' );
 
 	add_action( 'customize_register', 'stencil_customize_register' );
