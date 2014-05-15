@@ -1,17 +1,9 @@
 <?php
    
-   if ( $post ) {
-      
-      $post_id = $post->ID;
-      $parent_id = ($post->post_parent) ? $post->post_parent : $post_id;
-      $page_layout = get_post_meta( $post_id, '_page_layout', true );
+   $post_id = $post->ID;
+   $parent_id = ($post->post_parent) ? $post->post_parent : $post_id;
 
-   } else {
-
-      $parent_id = false;
-      $page_layout = 'right-sidebar';
-
-   }
+   $page_layout = (get_post_meta( $post_id, '_page_layout', true )) ? get_post_meta( $post_id, '_page_layout', true ) : 'right-sidebar';
 
 ?>
 <!DOCTYPE html>
