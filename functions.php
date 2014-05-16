@@ -236,7 +236,7 @@
 	class HeaderMenuWalker extends Walker_Nav_Menu {
 		
 		// add classes to ul sub-menus
-		function start_lvl( &$output, $depth = 0, $args = Array ) {
+		function start_lvl( &$output, $depth = 0, $args = array() ) {
 			
 			$indent = str_repeat( "\t", $depth );
 			$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
