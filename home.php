@@ -19,37 +19,42 @@
       <?php echo get_option('google_tag_manager'); ?>
       
       <?php if ( has_nav_menu( 'contact-menu' ) ): ?>
-      <header class="contact">
-         <div class="container">
-            <div class="row">
-               <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
-            </div>
-         </div>
-      </header>
-      <?php endif; ?>
-
-      <div class="container">
-         <div class="row">
-            <div class="branding col-md-3 col-sm-12 col-xs-12">
-               <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
-               <div class="title hide">
-                  <h1><?php echo get_bloginfo(); ?></h1>
-                  <span><?php echo get_bloginfo( 'description' ) ?></span>
+         <header class="contact container-fluid">
+            <div class="container">
+               <div class="row">
+                     <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
+                  </div>
                </div>
             </div>
-            <div class="col-md-9">
-               <?php if ( has_nav_menu( 'header-menu' ) ) 
-                  wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu' ) ); 
-               ?>
+         </header><!-- header.contact -->
+      <?php endif; ?>
+
+      <div id="navbar" class="container-fluid">
+         <div class="container">
+            <div class="row">
+               <div class="branding col-md-3 col-sm-12 col-xs-12">
+                  <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/newjc/newjc-logo-small.png" /></a>
+                  <div class="title hide">
+                     <h1><?php echo get_bloginfo(); ?></h1>
+                     <span><?php echo get_bloginfo( 'description' ) ?></span>
+                  </div>
+               </div>
+               <div class="col-md-9">
+                  <?php if ( has_nav_menu( 'header-menu' ) ) 
+                     wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu', 'walker' => new HeaderMenuWalker ) ); 
+                  ?>
+               </div>
             </div>
          </div>
-      </div>
+      </div><!-- #navbar -->
 
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12 text-center">
-               <h1>Church with a mission to resolve homelessness in Greensboro and Greater North Carolina</h1>
-               <p><a class="btn btn-primary btn-md" role="button" href="<?php echo home_url(); ?>/homelessness">Learn more</a></p>
+      <div class="container-fluid" style="background: #333; color: #ddd; padding-top: 20px; padding-bottom: 20px;">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 text-center">
+                  <h1>Church with a mission to resolve homelessness in Greensboro and Greater North Carolina</h1>
+                  <p><a class="btn btn-primary btn-md" role="button" href="<?php echo home_url(); ?>/homelessness">Learn more</a></p>
+               </div>
             </div>
          </div>
       </div>
@@ -58,7 +63,7 @@
          $upcoming_event = get_next_event();
          $rsvp_statuses = array( 'yes' => "I'm Going", 'no' => "I'm not going", 'maybe' => "I'm not sure" ); ?>
          <?php if ( $upcoming_event ): ?>
-            <div id="upcoming-event" class="container">
+            <div id="upcoming-event" class="container" style="margin-top: 20px;">
                <div class="row">
                   <div class="col-sm-5 col-md-5 col-md-offset-1">
                      <h2>
