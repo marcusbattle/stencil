@@ -19,11 +19,10 @@
       <?php echo get_option('google_tag_manager'); ?>
       
       <?php if ( has_nav_menu( 'contact-menu' ) ): ?>
-         <header class="contact container-fluid">
+         <header class="contact container-fluid hidden-xs">
             <div class="container">
                <div class="row">
-                     <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
-                  </div>
+                  <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
                </div>
             </div>
          </header><!-- header.contact -->
@@ -54,6 +53,7 @@
                               <a class="navbar-brand" href="#"><?php echo get_bloginfo(); ?></a>
                            </div>
                            <div class="collapse navbar-collapse">
+                              <?php if ( has_nav_menu( 'contact-menu' ) ) wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'nav navbar-nav contact-menu' ) ); ?>
                               <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new HeaderMenuWalker ) ); ?>
                            </div><!--/.nav-collapse -->
                         </div>
