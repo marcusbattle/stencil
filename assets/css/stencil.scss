@@ -117,6 +117,15 @@ article {
 
 @media (max-width: 768px) {
 
+	body {
+		padding-top: 51px;
+	}
+
+	.navbar-inverse {
+		border-left: none;
+		border-right: none;
+	}
+
 	.branding {
 
 		a.logo {
