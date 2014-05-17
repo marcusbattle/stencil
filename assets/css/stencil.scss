@@ -1,7 +1,6 @@
 #masthead {
 
-	> *:not(.filter) {
-		z-index: 1;
+	> *:not(.navbar) {
 		position: relative;
 	}
 
@@ -91,6 +90,14 @@ header {
 	background-color: #fff;
 }
 
+#mobile-menu {
+	position: fixed; 
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
 .header-menu {
 	margin-top: 25px;
 	margin-bottom: 25px;
@@ -112,6 +119,11 @@ article {
 }
 
 /** BOOTSTRAP STYLES **/
+
+.container-fluid {
+	padding: 0;
+}
+
 .current_page_item > a {
 
 	color: white;

@@ -1,5 +1,4 @@
-#masthead > *:not(.filter) {
-  z-index: 1;
+#masthead > *:not(.navbar) {
   position: relative; }
 
 a {
@@ -45,6 +44,13 @@ header.contact {
 #navbar {
   background-color: #fff; }
 
+#mobile-menu {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0; }
+
 .header-menu {
   margin-top: 25px;
   margin-bottom: 25px; }
@@ -59,6 +65,9 @@ article {
   border-color: #eee; }
 
 /** BOOTSTRAP STYLES **/
+.container-fluid {
+  padding: 0; }
+
 .current_page_item > a {
   color: white;
   background-color: #428bca; }
