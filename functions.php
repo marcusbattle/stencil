@@ -22,13 +22,13 @@
 
 	function stencil_scripts() {
 
-		wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
-		wp_enqueue_style( 'stencil-css', get_template_directory_uri() . '/assets/css/stencil.css' );
+		wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+		wp_enqueue_style( 'stencil', get_template_directory_uri() . '/assets/css/stencil.css', array( 'bootstrap' ) );
 
 		wp_enqueue_script( 'jquery-1-11', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', false, false, true );
-		wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery-1-11'), false, true );
+		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery-1-11'), false, true );
 
-		wp_enqueue_script( 'stencil-js', get_template_directory_uri() . '/assets/js/stencil.js', array('jquery-1-11'), false, true );
+		wp_enqueue_script( 'stencil', get_template_directory_uri() . '/assets/js/stencil.js', array('jquery-1-11'), false, true );
 
 	}
 

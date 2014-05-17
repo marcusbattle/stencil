@@ -1,3 +1,7 @@
+#masthead > *:not(.filter) {
+  z-index: 1;
+  position: relative; }
+
 a {
   cursor: pointer; }
 
@@ -38,6 +42,9 @@ header.contact {
     display: block;
     margin-left: 20px; }
 
+#navbar {
+  background-color: #fff; }
+
 .header-menu {
   margin-top: 25px;
   margin-bottom: 25px; }
@@ -52,9 +59,11 @@ article {
   border-color: #eee; }
 
 /** BOOTSTRAP STYLES **/
-.nav-pills > li.current_page_item > a {
+.current_page_item > a {
   color: white;
   background-color: #428bca; }
+  .current_page_item > a:hover {
+    color: #428bca; }
 
 .thumbnail {
   border-radius: 0; }

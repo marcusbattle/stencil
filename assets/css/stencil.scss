@@ -1,3 +1,12 @@
+#masthead {
+
+	> *:not(.filter) {
+		z-index: 1;
+		position: relative;
+	}
+
+}
+
 a {
 
 	cursor: pointer;
@@ -78,6 +87,10 @@ header {
 
 }
 
+#navbar {
+	background-color: #fff;
+}
+
 .header-menu {
 	margin-top: 25px;
 	margin-bottom: 25px;
@@ -99,13 +112,13 @@ article {
 }
 
 /** BOOTSTRAP STYLES **/
-.nav-pills {
+.current_page_item > a {
 
-	> li.current_page_item > a {
+	color: white;
+	background-color: #428bca;
 
-		color: white;
-		background-color: #428bca;
-
+	&:hover {
+		color: #428bca;
 	}
 
 }
