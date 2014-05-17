@@ -305,6 +305,26 @@
 
 	}
 
+	function stencil_theme_customizer( $wp_customize ) {
+    	
+    	$wp_customize->add_section( 'stencil_logo_section' , array(
+		    'title'       => __( 'Logo', 'stencil' ),
+		    'priority'    => 30,
+		    'description' => 'Upload a logo to replace the default site name and description in the header',
+		) );
+
+		$wp_customize->add_setting( 'stencil_logo' );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'stencil_logo', array(
+		    'label'    => __( 'Logo', 'stencil' ),
+		    'section'  => 'stencil_logo_section',
+		    'settings' => 'stencil_logo',
+		) ) );
+
+	}
+
+	add_action('customize_register', 'stencil_theme_customizer');
+
 	add_action( 'init', 'init_stencil' );
 	add_action( 'admin_menu', 'stencil_admin_menu' );
 	add_action( 'wp_enqueue_scripts', 'stencil_scripts' );
