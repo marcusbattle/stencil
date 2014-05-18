@@ -68,6 +68,10 @@ article {
 .container-fluid {
   padding: 0; }
 
+.container {
+  position: relative;
+  z-index: 1; }
+
 .current_page_item > a {
   color: white;
   background-color: #428bca; }
