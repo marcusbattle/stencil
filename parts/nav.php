@@ -24,7 +24,7 @@
          <div class="col-md-9 col-xs-12">
             <?php if ( has_nav_menu( 'header-menu' ) ): ?>
                <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav nav-pills header-menu hidden-xs hidden-s', 'walker' => new HeaderMenuWalker ) ); ?>
-               <div id="mobile-menu" class="navbar navbar-default hidden-lg hidden-md hidden-sm" role="navigation">
+               <div id="mobile-menu" class="navbar navbar-default hidden-lg hidden-md hidden-sm" role="navigation" style="margin-left: -30px; margin-right: -30px; position: fixed; width: 100%; z-index: 99; top: 0;">
                   <div class="container">
                      <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

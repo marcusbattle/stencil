@@ -9,6 +9,7 @@
 		// Define menu locations for Theme
 		register_nav_menu( 'header-menu', __('Header Menu') );
 		register_nav_menu( 'contact-menu', __('Contact Menu') );
+		register_nav_menu( 'footer-menu', __('Footer Menu') );
 
 		add_option( 'homepage_layout', 'one-pager', '', 'yes' );
 		add_option( 'google_tag_manager', '', '', 'yes' );
