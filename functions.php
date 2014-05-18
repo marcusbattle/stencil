@@ -284,7 +284,7 @@
 		    // Output toggle if the link has children
 		    if ( $has_children ) {
 
-		    	$item_output = '<a class="dropdown-toggle" data-toggle="dropdown" href="#">' . apply_filters( 'the_title', $item->title, $item->ID ) . ' <span class="caret"></span></a>';
+		    	$item_output = '<a class="dropdown-toggle" data-toggle="dropdown" href="' . $item->url . '">' . apply_filters( 'the_title', $item->title, $item->ID ) . ' <span class="caret"></span></a>';
 
 		    } else {
 
