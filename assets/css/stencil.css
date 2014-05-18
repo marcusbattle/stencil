@@ -73,6 +73,13 @@ article {
   background-size: cover;
   background-position-x: center;
   background-position-y: center; }
+  #page-title.tall {
+    padding: 50px 0; }
+  #page-title.blank {
+    background: transparent;
+    color: #666; }
+    #page-title.blank .page-header {
+      margin: 5px 15px; }
 
 #main {
   min-height: 400px;

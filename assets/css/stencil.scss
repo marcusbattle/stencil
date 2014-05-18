@@ -127,6 +127,20 @@ article {
 	background-size: cover;
 	background-position-x: center;
 	background-position-y: center;
+
+	&.tall {
+		padding: 50px 0;
+	}
+
+	&.blank {
+		background: transparent;
+		color: #666;
+
+		.page-header {
+			margin: 5px 15px;
+		}
+	}
+
 }
 
 #main {

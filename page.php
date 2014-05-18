@@ -10,7 +10,7 @@
 
    ?>
 
-   <div id="page-title" class="container-fluid" style="background-image: url(<?php echo $thumbnail_url; ?>);">
+   <div id="page-title" class="container-fluid <?php echo ($thumbnail_url) ? 'tall' : 'blank' ?>" style="background-image: url(<?php echo $thumbnail_url; ?>);">
       <div class="container">
          <div class="row">
             <div class="page-header col-md-12">
