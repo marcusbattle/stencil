@@ -33,7 +33,7 @@
                            <span class="icon-bar"></span>
                            <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><?php echo get_bloginfo(); ?></a>
+                        <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php echo get_bloginfo(); ?></a>
                      </div>
                      <div class="collapse navbar-collapse">
                         <?php if ( has_nav_menu( 'contact-menu' ) ) wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'nav navbar-nav contact-menu' ) ); ?>
