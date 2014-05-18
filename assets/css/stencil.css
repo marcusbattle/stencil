@@ -68,7 +68,10 @@ article {
 
 #page-title {
   background-color: #333;
-  color: #ddd; }
+  color: #ddd;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center; }
 
 #main {
   min-height: 400px;

@@ -11,7 +11,11 @@
 
    get_header();
    
-   get_template_part( 'parts/nav' ); ?>
+   get_template_part( 'parts/nav' ); 
+
+   the_post_thumbnail();
+   
+   ?>
 
    <div id="page-title" class="container-fluid">
       <div class="container">
@@ -32,7 +36,7 @@
          <?php 
 
             the_breadcrumb();
-            
+
             if ( $page_layout ) get_template_part( 'parts/' . $page_layout ); 
             else get_template_part( 'parts/right-sidebar' );
          ?>
