@@ -100,7 +100,9 @@ article {
     color: #428bca; }
 
 .thumbnail {
-  border-radius: 0; }
+  border-radius: 0;
+  border: none;
+  padding: 0; }
 
 .page-header {
   margin-left: 15px;
