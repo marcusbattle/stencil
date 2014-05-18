@@ -13,11 +13,9 @@
    
    get_template_part( 'parts/nav' ); 
 
-   the_post_thumbnail();
-   
    ?>
 
-   <div id="page-title" class="container-fluid">
+   <div id="page-title" class="container-fluid blank">
       <div class="container">
          <div class="row">
             <div class="page-header col-md-12">
