@@ -198,7 +198,15 @@ article {
 	}
 
 }
- 
+
+.stencil-widget {
+
+	> div {
+		padding-bottom: 10px;
+		margin-bottom: 25px;
+	}
+
+}
 
 /** ADMIN STYLES **/
 
@@ -211,7 +219,7 @@ article {
 	#navbar {
 		display: none;
 	}
-	
+
 	.navbar-inverse {
 		border-left: none;
 		border-right: none;
