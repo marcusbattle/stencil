@@ -214,8 +214,21 @@ article {
 
 @media (max-width: 768px) {
 
+
 	body {
 		padding-top: 51px;
+	}
+
+	.admin-bar {
+		
+		#wpadminbar {
+			position: fixed;
+			z-index: 1000 !important;
+		}
+
+		#mobile-menu {
+			margin-top: 46px;
+		}
 	}
 
 	#navbar {

@@ -131,6 +131,12 @@ article {
   body {
     padding-top: 51px; }
 
+  .admin-bar #wpadminbar {
+    position: fixed;
+    z-index: 1000 !important; }
+  .admin-bar #mobile-menu {
+    margin-top: 46px; }
+
   #navbar {
     display: none; }
 
