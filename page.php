@@ -9,7 +9,7 @@
    $thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
    ?>
-
+asd
    <div id="page-title" class="container-fluid <?php echo ($thumbnail_url) ? 'tall' : 'blank' ?>" style="background-image: url(<?php echo $thumbnail_url; ?>);">
       <div class="container">
          <div class="row">

@@ -210,6 +210,32 @@ article {
 
 }
 
+footer { 
+	background-color: #333;
+	padding-top: 30px;
+	color: #ddd;
+	
+	ul {
+		padding-left: 0;
+		list-style: none;
+
+		li {
+			border-bottom: 1px solid #555;
+			padding: 10px 0;
+		}
+	}
+
+	#copyright {
+		background-color: #222;
+		padding: 15px 0;
+
+		p {
+			margin-bottom: 0;
+			font-weight: 300;
+		}
+	}
+}
+
 /** ADMIN STYLES **/
 
 @media (max-width: 768px) {

@@ -126,6 +126,23 @@ article {
   padding-bottom: 10px;
   margin-bottom: 25px; }
 
+footer {
+  background-color: #333;
+  padding-top: 30px;
+  color: #ddd; }
+  footer ul {
+    padding-left: 0;
+    list-style: none; }
+    footer ul li {
+      border-bottom: 1px solid #555;
+      padding: 10px 0; }
+  footer #copyright {
+    background-color: #222;
+    padding: 15px 0; }
+    footer #copyright p {
+      margin-bottom: 0;
+      font-weight: 300; }
+
 /** ADMIN STYLES **/
 @media (max-width: 768px) {
   body {
