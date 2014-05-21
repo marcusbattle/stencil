@@ -296,6 +296,8 @@ footer {
 	
 	.nav { 
 		padding: 20px;
+		max-height: 96%;
+		overflow-y: auto;
 
 		li {
 			margin-top: 0;
