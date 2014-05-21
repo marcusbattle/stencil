@@ -28,6 +28,7 @@
          </div>
       </footer>
 
+      <?php get_template_part('parts/mobile-menu'); ?>
       <?php wp_footer(); ?>
    </body>
 </html>

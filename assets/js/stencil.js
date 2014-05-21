@@ -13,4 +13,28 @@
 
 	});
 
+	$('.mobile-menu-trigger').on( 'click', function(e) {
+		e.preventDefault();
+		trigger_menu();
+	});
+
+	$('.mobile-menu-overlay').on( 'click', function(e) {
+		e.preventDefault();
+		trigger_menu();
+	});
+
+	window.trigger_menu = function() {
+
+		if ( $('#mobile-menu').hasClass('slide') ) {
+			$('#mobile-menu').removeClass('slide');
+			$('body').addClass('freeze-page');
+			$('.mobile-menu-overlay').fadeIn();
+		} else {
+			$('#mobile-menu').addClass('slide');
+			$('body').removeClass('freeze-page');
+			$('.mobile-menu-overlay').fadeOut();
+		}
+
+	}
+
 })(jQuery);

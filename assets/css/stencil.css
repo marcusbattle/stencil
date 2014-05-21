@@ -41,17 +41,14 @@ header.contact {
     display: block;
     margin-left: 20px; }
 
+header.contact {
+  border-bottom: 1px solid #eee; }
+
 #navbar {
   background-color: #fff;
   z-index: 10;
-  position: relative; }
-
-#mobile-menu {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  right: 0; }
+  position: relative;
+  border-bottom: 1px solid #ddd; }
 
 .header-menu {
   margin-top: 25px;
@@ -91,7 +88,8 @@ article {
 
 .container {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  max-width: 1000px; }
 
 .current_page_item > a {
   color: white;
@@ -143,8 +141,93 @@ footer {
       margin-bottom: 0;
       font-weight: 300; }
 
+/** SLIDER MENU **/
+.navbar-collapse.slide-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0; }
+
+#mobile-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  z-index: 100;
+  display: none;
+  border-bottom: 1px solid #ddd; }
+  #mobile-header img {
+    max-height: 48px; }
+  #mobile-header .mobile-menu-trigger {
+    min-width: 60px;
+    position: absolute;
+    right: 15px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    height: 100%; }
+  #mobile-header .logo {
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 10px; }
+
+#mobile-menu {
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  background-color: #fff;
+  box-shadow: 1px 1px 20px 1px #333;
+  overflow-y: scroll;
+  font-size: 16px;
+  display: block;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; }
+  #mobile-menu .nav {
+    padding: 20px; }
+    #mobile-menu .nav li {
+      margin-top: 0; }
+    #mobile-menu .nav .current_page_item > a {
+      background-color: transparent; }
+  #mobile-menu a {
+    border-radius: 0;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 14px 0;
+    color: #777;
+    border-bottom: 1px solid #ddd; }
+    #mobile-menu a:hover {
+      background-color: transparent; }
+  #mobile-menu.slide {
+    width: 0px;
+    opacity: .5;
+    box-shadow: none; }
+
+.mobile-menu-overlay {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  opacity: .3;
+  display: none; }
+
+.freeze-page {
+  position: absolute;
+  overflow: hidden; }
+
 /** ADMIN STYLES **/
 @media (max-width: 768px) {
+  #mobile-header {
+    display: block; }
+
   body {
     padding-top: 51px; }
 

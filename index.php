@@ -1,7 +1,9 @@
 <?php
 
    if ( !is_post_type_archive() ) {
-   
+
+      global $post;
+
       $post_id = $post->ID;
       $parent_id = ($post->post_parent) ? $post->post_parent : $post_id;
 
