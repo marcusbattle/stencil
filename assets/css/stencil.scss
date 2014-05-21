@@ -277,7 +277,7 @@ footer {
 
 #mobile-menu {
 	
-	position: absolute;
+	position: fixed;
 	z-index: 1001;
 	top: 0;
 	right: 0;
@@ -301,8 +301,26 @@ footer {
 			margin-top: 0;
 		}
 
+		.open > a {
+			background-color: transparent;
+			font-weight: bold;
+		}
+
 		.current_page_item > a {
 			background-color: transparent;
+		}
+
+		.dropdown-menu {
+			position: relative;
+			box-shadow: none;
+			border: none;
+			width: 100%;
+			padding-left: 30px;
+
+			li a {
+				border-bottom: none;
+				font-size: 16px;
+			}
 		}
 	}
 

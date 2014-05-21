@@ -173,7 +173,7 @@ footer {
     padding: 0 10px; }
 
 #mobile-menu {
-  position: absolute;
+  position: fixed;
   z-index: 1001;
   top: 0;
   right: 0;
@@ -192,8 +192,20 @@ footer {
     padding: 20px; }
     #mobile-menu .nav li {
       margin-top: 0; }
+    #mobile-menu .nav .open > a {
+      background-color: transparent;
+      font-weight: bold; }
     #mobile-menu .nav .current_page_item > a {
       background-color: transparent; }
+    #mobile-menu .nav .dropdown-menu {
+      position: relative;
+      box-shadow: none;
+      border: none;
+      width: 100%;
+      padding-left: 30px; }
+      #mobile-menu .nav .dropdown-menu li a {
+        border-bottom: none;
+        font-size: 16px; }
   #mobile-menu a {
     border-radius: 0;
     font-weight: 300;
