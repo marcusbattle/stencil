@@ -1,13 +1,3 @@
-<?php if ( has_nav_menu( 'contact-menu' ) ): ?>
-   <header class="contact container-fluid hidden-xs">
-      <div class="container">
-         <div class="row">
-            <?php wp_nav_menu( array( 'theme_location' => 'contact-menu', 'container' => false, 'menu_class' => 'contact-menu right' ) ); ?>
-         </div>
-      </div>
-   </header><!-- header.contact -->
-<?php endif; ?>
-
 <div id="navbar" class="container-fluid">
    <div class="container">
       <div class="row">
