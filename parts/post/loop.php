@@ -1,5 +1,4 @@
 <?php
-
 	global $wp_query;
 	
 	$max_pages = $wp_query->max_num_pages;
@@ -7,21 +6,20 @@
 
 	$post_type = get_post_type_object( get_post_type() );
 	$post_type_slug = isset($post_type->rewrite['slug']) ? $post_type->rewrite['slug'] : '';
-	
-	// echo "<pre>";
-	// print_r( $wp_query );
-	// echo "</pre>";
-
 ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 	<article class="row <?php echo $post->post_type; ?>">
-		<div class="col-md-4 col-sm-4">
-		    <a href="<?php the_permalink(); ?>" class="thumbnail">
-		    	<?php the_post_thumbnail(); ?>
-		    </a>
-		</div>
+
+		<?php if ( has_post_thumbnail() ): ?>
+			<div class="col-md-4 col-sm-4">
+			    <a href="<?php the_permalink(); ?>" class="thumbnail">
+			    	<?php the_post_thumbnail(); ?>
+			    </a>
+			</div>
+		<?php endif; ?>
+
 		<div class="col-md-8 col-sm-8">
 			<h3>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <br />
@@ -36,7 +34,7 @@
 <?php endif; ?>
 
 <?php if ( $max_pages > 1 ): ?>
-<h4>View More Upcoming Events</h4>
+<h4>View More <?php post_type_archive_title(); ?></h4>
 <ul class="pagination">
 	<!-- <li class="disabled"><a href="#">&laquo;</a></li> -->
 

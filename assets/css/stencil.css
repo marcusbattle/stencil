@@ -98,9 +98,12 @@ article {
     color: #428bca; }
 
 .thumbnail {
-  border-radius: 0;
+  border-radius: 4px;
   border: none;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden;
+  max-height: 200px;
+  display: block; }
 
 .page-header {
   margin-left: 15px;
