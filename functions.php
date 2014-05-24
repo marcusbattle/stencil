@@ -350,7 +350,7 @@
 
 	    if ( is_singular() && $post->post_parent ) {
 
-	    	foreach( get_post_ancestors( $post->ID ) as $parent )
+	    	foreach( array_reverse( get_post_ancestors( $post->ID ) ) as $parent )
 	    		$breadcrumb .= '<li><a href="' . get_permalink( $parent ) . '">' . get_the_title( $parent ) . '</a></li>';
 
 	    }
