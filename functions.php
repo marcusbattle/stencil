@@ -98,18 +98,9 @@
 		}
 
 		register_sidebar( array(
-			'name' => 'Left Sidebar',
-			'id' => 'stencil_left_sidebar',
-			'before_widget' => '<div class="stencil-widget%1 stencil-widget-sidebar">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3>',
-			'after_title' => '</h3>',
-		) );
-
-		register_sidebar( array(
-			'name' => 'Right Sidebar',
-			'id' => 'stencil_right_sidebar',
-			'before_widget' => '<div class="stencil-widget%1 stencil-widget-sidebar">',
+			'name' => 'Sidebar',
+			'id' => 'stencil_sidebar',
+			'before_widget' => '<div class="stencil-widget stencil-widget-sidebar">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',

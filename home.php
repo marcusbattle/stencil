@@ -2,7 +2,7 @@
    
    <?php get_template_part( 'parts/nav' ); ?>
 
-   <div class="content container-fluid">
+   <div id="main" class="content container-fluid">
       <div class="container">
          <div class="row">
             <div class="col-md-8">

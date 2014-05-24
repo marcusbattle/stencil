@@ -12,6 +12,10 @@ a {
 h1 small {
   font-size: 50%; }
 
+p {
+  font-size: 17px;
+  font-weight: 200; }
+
 .branding a.logo {
   float: left;
   display: inline-block; }
@@ -26,26 +30,10 @@ h1 small {
   .branding .title h1 {
     margin: 0; }
 
-/** MENU STYLES **/
-.contact-menu {
-  margin-left: 0;
-  margin-bottom: 0; }
-  .contact-menu.right {
-    float: right; }
-  .contact-menu li {
-    float: left;
-    position: relative;
-    display: block;
-    margin-left: 20px; }
-
-header.contact {
-  border-bottom: 1px solid #eee; }
-
 #navbar {
   background-color: #fff;
   z-index: 10;
-  position: relative;
-  border-bottom: 1px solid #ddd; }
+  position: relative; }
 
 .header-menu {
   margin-top: 25px;

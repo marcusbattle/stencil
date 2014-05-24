@@ -26,6 +26,11 @@ h1 {
 
 }
 
+p {
+	font-size: 17px;
+	font-weight: 200;
+}
+
 .branding {
 
 	a.logo {
@@ -54,38 +59,10 @@ h1 {
 
 }
 
-/** MENU STYLES **/
-.contact-menu {
-
-	margin-left: 0;
-	margin-bottom: 0;
-
-	&.right {
-		float: right;
-	}
-
-	li {
-		float: left;
-		position: relative;
-		display: block;
-		margin-left: 20px;
-		
-		a {
-		}
-
-	}
-
-}
-
-header.contact {
-	border-bottom: 1px solid #eee;
-}
-
 #navbar {
 	background-color: #fff;
 	z-index: 10;
 	position: relative;
-	border-bottom: 1px solid #ddd;
 }
 
 .header-menu {
