@@ -100,7 +100,7 @@
 		register_sidebar( array(
 			'name' => 'Sidebar',
 			'id' => 'stencil_sidebar',
-			'before_widget' => '<div class="stencil-widget stencil-widget-sidebar">',
+			'before_widget' => '<div id="%1$s" class="stencil-widget %2$s stencil-widget-sidebar">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
