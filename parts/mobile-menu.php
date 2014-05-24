@@ -10,13 +10,13 @@
 	<a class="mobile-menu-trigger" href="#">Menu</a>
 </div>
 
-<?php wp_nav_menu( array( 
-	'theme_location' => 'header-menu', 
-	'container' => 'div', 
-	'container_id' => 'mobile-menu',
-	'container_class' => 'slide',
-	'menu_class' => 'nav nav-pills nav-stacked', 
-	'walker' => new HeaderMenuWalker 
-) ); ?>
+<div id="mobile-menu" class="slide">
+	<?php wp_nav_menu( array( 
+		'theme_location' => 'header-menu', 
+		'container' => 'false',
+		'menu_class' => 'nav nav-pills nav-stacked', 
+		'walker' => new HeaderMenuWalker 
+	) ); ?>
+</div>
 
 <div class="mobile-menu-overlay"></div>
