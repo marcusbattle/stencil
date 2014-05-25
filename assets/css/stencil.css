@@ -1,7 +1,7 @@
 body {
   height: 100%;
   width: 100%;
-  position: absolute; }
+  background-color: transparent; }
 
 #header > *:not(.navbar) {
   position: relative; }
