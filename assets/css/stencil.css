@@ -268,3 +268,6 @@ footer {
 
   .header-menu.pull-right {
     float: none !important; } }
+@media (max-width: 480px) {
+  iframe {
+    height: 320px; } }
