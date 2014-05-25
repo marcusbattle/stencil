@@ -10,26 +10,14 @@
 
    ?>
 
-   <div id="page-title" class="container-fluid <?php echo ($thumbnail_url) ? 'tall' : 'blank' ?>" style="background-image: url(<?php echo $thumbnail_url; ?>);">
-      <div class="container">
-         <div class="row">
-            <div class="page-header col-md-12">
-               <?php if ( is_post_type_archive() ): ?>
-                  <h1><?php post_type_archive_title(); ?></h1>
-               <?php else: ?>
-                  <h1><?php the_title(); ?></h1>
-               <?php endif; ?>
-            </div>
-         </div>
-      </div>
-   </div>
+   <div class="peep-hole container-fluid"></div>
 
    <div id="main" class="container-fluid">
       <div class="container <?php echo $page_layout ?>">
+         <?php the_breadcrumb(); ?>
+         <h1><?php the_title(); ?></h1>
+         <div class="thumbnail <?php echo (get_the_post_thumbnail()) ? 'tall' : '' ?>" style="background-image: url(<?php echo $thumbnail_url; ?>);"></div>
          <?php 
-
-            the_breadcrumb();
-
             if ( $page_layout ) get_template_part( 'parts/' . $page_layout ); 
             else get_template_part( 'parts/right-sidebar' );
          ?>

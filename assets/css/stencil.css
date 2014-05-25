@@ -14,7 +14,8 @@ h1 small {
 
 p {
   font-size: 17px;
-  font-weight: 200; }
+  font-weight: 200;
+  margin: 0 0 25px; }
 
 .branding a.logo {
   float: left;
@@ -49,23 +50,21 @@ article {
   margin-bottom: 20px;
   border-color: #eee; }
 
-#page-title {
-  background-color: #333;
+.peep-hole {
   color: #ddd;
   background-size: cover;
   background-position-x: center;
-  background-position-y: center; }
-  #page-title.tall {
-    padding: 50px 0; }
-  #page-title.blank {
-    background: transparent;
-    color: #666; }
-    #page-title.blank .page-header {
-      margin: 5px 15px; }
+  background-position-y: center;
+  background: transparent;
+  color: #666;
+  height: 115px; }
 
 #main {
   min-height: 400px;
-  padding: 30px 0; }
+  padding: 30px 0;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center; }
 
 /** BOOTSTRAP STYLES **/
 .container-fluid {
@@ -88,7 +87,13 @@ article {
   padding: 0;
   overflow: hidden;
   max-height: 200px;
-  display: block; }
+  display: block;
+  background-position-y: 50%;
+  background-position-x: center;
+  background-size: cover; }
+  .thumbnail.tall {
+    height: 250px;
+    max-height: inherit; }
 
 .page-header {
   margin-left: 15px;
@@ -127,7 +132,8 @@ footer {
     padding: 15px 0; }
     footer #copyright p {
       margin-bottom: 0;
-      font-weight: 300; }
+      font-weight: 300;
+      font-size: 13px; }
 
 /** SLIDER MENU **/
 .navbar-collapse.slide-menu {
