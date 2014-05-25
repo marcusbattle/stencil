@@ -32,6 +32,19 @@ p {
 	margin: 0 0 25px;
 }
 
+img {
+
+	&.alignleft {
+		float: left;
+		margin-right: 25px;
+	}
+
+	&.alignright {
+		float: right;
+		margin-left: 25px;
+	}
+}
+
 .branding {
 
 	a.logo {
