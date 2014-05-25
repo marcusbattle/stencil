@@ -4,12 +4,12 @@
 ?>
 
    <div class="peep-hole container-fluid"></div>
-   
+
    <div id="main" class="container-fluid">
-      <div class="container <?php echo $page_layout ?>">
+      <div class="container right-sidebar">
          <?php the_breadcrumb(); ?>
          <h1><?php post_type_archive_title(); ?></h1>
-         <?php get_template_part( 'parts/post/loop' ); ?>
+         <?php get_template_part( 'parts/right-sidebar' ); ?>
       </div>
    </div>
 

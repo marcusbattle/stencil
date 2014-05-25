@@ -400,6 +400,10 @@ footer {
 
 	.header-menu {
 		
+		&.pull-right {
+			float: none !important;
+		}
+		
 	}
 
 }
