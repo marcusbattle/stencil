@@ -24,6 +24,9 @@ img.alignright {
   float: right;
   margin-left: 25px; }
 
+ul {
+  margin-bottom: 30px; }
+
 .branding a.logo {
   float: left;
   display: inline-block; }
