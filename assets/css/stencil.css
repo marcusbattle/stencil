@@ -25,7 +25,8 @@ img.alignright {
   margin-left: 25px; }
 
 ul {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  font-size: 15px; }
 
 .branding a.logo {
   float: left;
