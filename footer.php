@@ -29,6 +29,9 @@
       </footer>
 
       <?php get_template_part('parts/mobile-menu'); ?>
+
+      <div class="background"></div>
+
       <?php wp_footer(); ?>
    </body>
 </html>
