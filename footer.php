@@ -33,5 +33,6 @@
       <div class="background"></div>
 
       <?php wp_footer(); ?>
+      <?php echo get_option('google_analytics'); ?>
    </body>
 </html>

@@ -12,12 +12,16 @@
 
 		add_option( 'homepage_layout', 'one-pager', '', 'yes' );
 		add_option( 'google_tag_manager', '', '', 'yes' );
+		add_option( 'google_analytics', '', '', 'yes' );
 
 
 		if ( isset($_REQUEST['google_tag_manager']) ) {
-			update_option( 'google_tag_manager', $_POST['google_tag_manager'] );
+			update_option( 'google_tag_manager', stripslashes($_POST['google_tag_manager']) );
 		}
 
+		if ( isset($_REQUEST['google_analytics']) ) {
+			update_option( 'google_analytics', stripslashes($_POST['google_analytics']) );
+		}
 	}
 
 	function stencil_scripts() {
