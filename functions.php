@@ -399,6 +399,21 @@
 	//     echo '</ul>';
 	}
 
+	function woocommerce_support() {
+	    add_theme_support( 'woocommerce' );
+	}
+
+	function woo_page_wrapper_start() {
+		// echo '<div class="container-fluid stage woocommerce">';
+		get_template_part( 'parts/nav' ); 
+		echo '<div class="peep-hole container-fluid"></div>';
+		echo '<div id="main" class="container-fluid"><div class="container">';
+		the_breadcrumb();
+	}
+
+	function woo_page_wrapper_end() {
+		echo '</div></div>';
+	}
 
 	add_action('customize_register', 'stencil_theme_customizer');
 
@@ -415,4 +430,14 @@
 	add_action( 'add_meta_boxes', 'stencil_meta_boxes' );
 	add_action( 'save_post','stencil_save_post' );
 
+	// Add WOO theme support
+	add_action( 'after_setup_theme', 'woocommerce_support' );
+
+	// Remove default WooCommerce Support
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+	// Add custom WooCommerce Headers
+	add_action( 'woocommerce_before_main_content', 'woo_page_wrapper_start', 10 );
+	add_action( 'woocommerce_after_main_content', 'woo_page_wrapper_end', 10 );
 ?>
